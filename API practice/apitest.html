@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Hulk</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+var hero = $('p').val()
+var queryURL = "https://www.superheroapi.com/api.php/10223973374665645/id/search"+hero
+console.log(hero)
+$.ajax({
+    URL: queryURL,
+    method: "GET",
+}).then(function(response){
+    console.log(response)
+})
+
+</script>
+</body>
+</html>
