@@ -1,13 +1,21 @@
+const page = $("body")
 const starters = ["charmander", "squirtle", "bulbasaur"]
 const garyChoice = starters[Math.floor(Math.random() * starters.length)]
-// starters[Math.floor(Math.random() * starters.length)]
+
+const initiateBattle = pokemon => {
+    console.log(pokemon)
+    console.log(garyChoice)
+    page.empty()
+
+}
 
 $("button").on('click', event => {
+    const playerChoice = event.target.id
     event.preventDefault()
-    console.log(event.target.id)
-    console.log(garyChoice)
-
+    initiateBattle(playerChoice) 
 })
+
+
 
 // OLD CODE
 // var WinCount = 0;
