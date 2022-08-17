@@ -2,10 +2,24 @@ const page = $("body")
 const starters = ["charmander", "squirtle", "bulbasaur"]
 const garyChoice = starters[Math.floor(Math.random() * starters.length)]
 
-const initiateBattle = pokemon => {
-    console.log(pokemon)
-    console.log(garyChoice)
-    page.empty()
+const initiateBattle = choice => {
+    let pokemon;
+    // console.log(garyChoice)
+    // page.empty()
+    const cliBut = $(`#${choice}`)
+    cliBut.css("background-color", "red")
+    
+    switch (choice){
+        case "fire":
+            pokemon = "Charmander";
+            break;
+        case "water":
+            pokemon = "Squirtle";
+            break;
+        case "grass":
+            pokemon = "Bulbasaur";
+    }
+
 
 }
 
