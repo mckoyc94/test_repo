@@ -1,25 +1,40 @@
 const page = $("body")
-const starters = ["charmander", "squirtle", "bulbasaur"]
+const starters = ["Charmander", "Squirtle", "Bulbasaur"]
 const garyChoice = starters[Math.floor(Math.random() * starters.length)]
 
+let winCount = 0;
+let lossCount = 0;
+let tieCount = 0;
+
 const initiateBattle = choice => {
+    const opponent = $("<p>")
+    const player = $("<p>")
     let pokemon;
     // console.log(garyChoice)
-    // page.empty()
+    
     const cliBut = $(`#${choice}`)
     cliBut.css("background-color", "red")
     
     switch (choice){
         case "fire":
-            pokemon = "Charmander";
-            break;
+        pokemon = "Charmander";
+        break;
         case "water":
-            pokemon = "Squirtle";
-            break;
+        pokemon = "Squirtle";
+        break;
         case "grass":
-            pokemon = "Bulbasaur";
+        pokemon = "Bulbasaur";
     }
+               
+    page.empty()
+    page.append($("<h1>").text("Let the Battle Begin"))
+    page.append(opponent.text(`Gary chose ${garyChoice}`))
+    page.append(player.text(`You chose ${pokemon}`))
 
+    // if(pokemon === "Charmander" && garyChoice === "Bulbasaur"|| pokemon === "Squirtle" && garyChoice === "Charmander" || pokemon === "Bulbasaur" && garyChoice === "Squirtle"){
+    //     winCount++;
+    //     page.append($("<h2>").text("You won!"))
+    // }
 
 }
 
@@ -32,9 +47,9 @@ $("button").on('click', event => {
 
 
 // OLD CODE
-// var WinCount = 0;
-// var LossCount = 0;
-// var TieCount = 0;
+var WinCount = 0;
+var LossCount = 0;
+var TieCount = 0;
 
 // var Starters = ['Bulbasaur', 'Squirtle', 'Charmander']
 
