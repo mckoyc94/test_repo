@@ -31,11 +31,18 @@ const initiateBattle = choice => {
     page.append(opponent.text(`Gary chose ${garyChoice}`))
     page.append(player.text(`You chose ${pokemon}`))
 
-    // if(pokemon === "Charmander" && garyChoice === "Bulbasaur"|| pokemon === "Squirtle" && garyChoice === "Charmander" || pokemon === "Bulbasaur" && garyChoice === "Squirtle"){
-    //     winCount++;
-    //     page.append($("<h2>").text("You won!"))
-    // }
+    if(pokemon === "Charmander" && garyChoice === "Bulbasaur"|| pokemon === "Squirtle" && garyChoice === "Charmander" || pokemon === "Bulbasaur" && garyChoice === "Squirtle"){
+        winCount++;
+        page.append($("<h2>").text("You won!"))
+    } else if (pokemon === "Squirtle" && garyChoice === "Bulbasaur"|| pokemon === "Bulbasaur" && garyChoice === "Charmander" || pokemon === "Charmander" && garyChoice === "Squirtle"){
+        lossCount++;
+        page.append($("<h2>").text("Gary won!"))
+    } else if (pokemon === garyChoice){
+        tieCount++;
+        page.append($("<h2>").text("You and Gary tied..."))
+    }
 
+    page.append($("<button>").text("Try Again?").attr("id", "retry"))
 }
 
 $("button").on('click', event => {
