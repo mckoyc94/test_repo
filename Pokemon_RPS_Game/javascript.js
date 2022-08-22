@@ -1,12 +1,12 @@
 const page = $("body")
 const starters = ["Charmander", "Squirtle", "Bulbasaur"]
-const garyChoice = starters[Math.floor(Math.random() * starters.length)]
 
 let winCount = 0;
 let lossCount = 0;
 let tieCount = 0;
 
 const initiateBattle = choice => {
+    const garyChoice = starters[Math.floor(Math.random() * starters.length)]
     const opponent = $("<p>")
     const player = $("<p>")
     let pokemon;
@@ -39,11 +39,13 @@ const initiateBattle = choice => {
         page.append($("<h2>").text("You and Gary tied..."))
     }
 
+    page.append($("<h3>").text(`Wins: ${winCount} Losses: ${lossCount} Ties: ${tieCount}`))
     page.append($("<button>").text("Try Again?").attr("id", "retry"))
 }
 
-$("button").on('click', event => {
+$(".pick").on('click', event => {
     const playerChoice = event.target.id
     event.preventDefault()
     initiateBattle(playerChoice) 
 })
+
