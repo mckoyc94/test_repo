@@ -40,7 +40,19 @@ const initiateBattle = choice => {
     }
 
     page.append($("<h3>").text(`Wins: ${winCount} Losses: ${lossCount} Ties: ${tieCount}`))
-    page.append($("<button>").text("Try Again?").attr("id", "retry"))
+
+    if (winCount === 10){
+        page.append($("<h1>").text("You've obtained Ultimate Victory!"))
+    }
+    else if (lossCount === 10){
+        page.append($("<h1>").text("You weren't able to emerge victorious..."))
+    }
+    else if (tieCount === 10){
+        page.append($("<h1>").text("Neither of you could get the upper hand..."))
+    } 
+    else {
+        page.append($("<button>").text("Try Again?").attr("id", "retry"))
+    }
 }
 
 $(".pick").on('click', event => {
