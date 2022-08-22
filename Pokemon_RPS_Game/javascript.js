@@ -1,4 +1,5 @@
-const page = $("body")
+const start = $("#startScreen")
+const page = $("#endScreen")
 const starters = ["Charmander", "Squirtle", "Bulbasaur"]
 
 let winCount = 0;
@@ -10,7 +11,6 @@ const initiateBattle = choice => {
     const opponent = $("<p>")
     const player = $("<p>")
     let pokemon;
-    // console.log(garyChoice)
     
     switch (choice){
         case "fire":
@@ -23,7 +23,7 @@ const initiateBattle = choice => {
         pokemon = "Bulbasaur";
     }
                
-    page.empty()
+    start.css("visibility", "hidden")
     page.append($("<h1>").text("Let the Battle Begin"))
     page.append(opponent.text(`Gary chose ${garyChoice}`))
     page.append(player.text(`You chose ${pokemon}`))
@@ -49,3 +49,9 @@ $(".pick").on('click', event => {
     initiateBattle(playerChoice) 
 })
 
+page.on('click', 'button', event => {
+    event.preventDefault()
+    console.log("clicked")
+    page.empty()
+    start.css("visibility", "visible")
+})
