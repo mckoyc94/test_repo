@@ -1,0 +1,24 @@
+#water {
+    background-color: aqua;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 37px;
+}
+
+#fire {
+    background-color: orangered;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 37px;
+
+}
+
+#grass {
+    background-color: green;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 37px;
+}
