@@ -1,3 +1,9 @@
+.box {
+    text-align: center;
+}
+
+
+/* Choice Buttons */
 #water {
     background-color: aqua;
     width: 25px;
